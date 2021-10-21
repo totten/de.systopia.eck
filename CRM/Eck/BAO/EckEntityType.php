@@ -21,6 +21,21 @@ class CRM_Eck_BAO_EckEntityType extends CRM_Eck_DAO_EckEntityType {
 
   protected static $_entityTypes;
 
+  public static function getSubscribedEvents() {
+    return [
+      'civi.afform.entities' => 'getAfformEntities',
+    ];
+  }
+
+  public static function getAfformEntities(GenericHookEvent $event) {
+    $event->entities += array_map(function($entity_type) use ($event) {
+      return [
+        'entity' => 'Eck' . $entity_type['name'],
+        'label' => $entity_type['label'],
+      ];
+    }, self::getEntityTypes());
+  }
+
   public static function getEntityTypes() {
     if (!isset(static::$_entityTypes)) {
       $entity_types = civicrm_api3('EckEntityType', 'get', [], ['limit' => 0])['values'];
