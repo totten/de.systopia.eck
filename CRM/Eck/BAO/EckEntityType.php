@@ -17,7 +17,7 @@ use CRM_Eck_ExtensionUtil as E;
 use \Civi\Core\Event\GenericHookEvent;
 use \Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class CRM_Eck_BAO_EckEntityType extends CRM_Eck_DAO_EckEntityType {
+class CRM_Eck_BAO_EckEntityType extends CRM_Eck_DAO_EckEntityType implements EventSubscriberInterface {
 
   protected static $_entityTypes;
 
