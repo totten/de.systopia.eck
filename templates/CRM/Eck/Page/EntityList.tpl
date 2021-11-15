@@ -14,6 +14,7 @@
 
 {crmScope extensionKey='de.systopia.eck'}
   {capture assign="entity_type_name"}{$entity_type.name}{/capture}
+  {capture assign="entity_type_name_url"}{$entity_type.url_name}{/capture}
   <div class="crm-block crm-content-block">
     <table class="row-highlight">
       <thead>
@@ -39,7 +40,15 @@
                     {/if}
                 </td>
               {/foreach}
-              <td></td>
+              <td>
+                <ul>
+                  <li>
+                    <a href="{crmURL p="civicrm/admin/eck/$entity_type_name_url" f="?id=$entity_id"}">
+                        {ts}Edit{/ts}
+                    </a>
+                  </li>
+                </ul>
+              </td>
             </tr>
           {/foreach}
       {else}

@@ -24,6 +24,7 @@ class CRM_Eck_Page_EntityList extends CRM_Core_Page {
 
     try {
       $entity_type = civicrm_api3('EckEntityType', 'getsingle', ['name' => $entity_type_name]);
+      $entity_type['url_name'] = strtolower(preg_replace('/(?<!^)[A-Z]/', '_$0', $entity_type_name));
       $this->assign('entity_type', $entity_type);
     }
     catch (Exception $exception) {
