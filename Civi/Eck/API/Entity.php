@@ -108,11 +108,8 @@ class Entity implements API_ProviderInterface, EventSubscriberInterface {
   public function onApiResolve(ResolveEvent $event) {
     $apiRequest = $event->getApiRequest();
     if (
-      $apiRequest['entity'] != 'EckEntityType'
-      && in_array(
-        $apiRequest['entity'],
-        static::getEntityNames($apiRequest['version'])
-      )
+      strpos($apiRequest['entity'], 'Eck') === 0 &&
+      $apiRequest['entity'] !== 'EckEntityType'
     ) {
       $event->setApiProvider($this);
       $apiRequest = $event->getApiRequest();
