@@ -1,12 +1,12 @@
 {
-    "type": "block",
+    "type": "form",
     "requires": [],
-    "entity_type": "EckThing",
+    "entity_type": "Eck_Thing",
     "title": "ECK Thing Form",
     "description": "",
     "is_dashlet": false,
     "is_public": true,
     "is_token": false,
-    "server_route": "",
+    "server_route": "civicrm/eck/thing",
     "permission": "administer CiviCRM"
 }

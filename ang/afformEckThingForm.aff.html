@@ -1,0 +1,15 @@
+<af-form ctrl="modelListCtrl">
+  <div crm-ui-debug="modelListCtrl.getEntity('eck_thing')" />
+  <af-entity type="Eck_Thing" name="eck_thing" label="ECK Thing" api4-params="{where: ['id','=', routeParams.id]}" url-autofill="1" autofill="user" />
+
+  <fieldset af-fieldset="eck_thing">
+    <div class="af-container af-layout-inline">
+      <af-field name="title" />
+      <af-field name="subtype" />
+    </div>
+  </fieldset>
+
+  <!-- General elements: FIELDSET, UL, BUTTON, P, H1 should work anywhere -->
+  <button class="af-button btn btn-primary" crm-icon="fa-check" ng-click="modelListCtrl.submit()">Save</button>
+
+</af-form>
