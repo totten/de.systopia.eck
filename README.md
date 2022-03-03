@@ -7,6 +7,10 @@ standard CiviCRM entities are not sufficient.
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
+# Automated Testing
+
+[![CircleCI](https://circleci.com/gh/systopia/de.systopia.eck.svg?style=svg)](https://circleci.com/gh/systopia/de.systopia.eck)
+
 ## Requirements
 
 * PHP v7.2+
