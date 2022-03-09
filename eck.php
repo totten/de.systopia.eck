@@ -71,6 +71,26 @@ function eck_civicrm_managed(&$entities, $modules = NULL) {
         ],
       ],
     ];
+    $entities[] = [
+      'module' => E::LONG_NAME,
+      'name' => 'tag_used_for:' . $type['name'],
+      'entity' => 'OptionValue',
+      'cleanup' => 'always',
+      'update' => 'always',
+      'params' => [
+        'version' => 4,
+        'values' => [
+          'option_group_id.name' => 'tag_used_for',
+          'label' => $type['label'],
+          'value' => $type['table_name'],
+          'name' => $type['entity_name'],
+          'description' => NULL,
+          'is_reserved' => TRUE,
+          'is_active' => TRUE,
+          'grouping' => NULL,
+        ],
+      ],
+    ];
   }
 }
 
