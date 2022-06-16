@@ -243,7 +243,7 @@ function eck_civicrm_navigationMenu(&$menu) {
     _eck_civix_insert_navigation_menu($menu, 'eck_entities', array(
       'label' => $entity_type['label'],
       'name' => 'eck_' . $entity_type['name'],
-      'url' => 'civicrm/eck/entity/list?reset=1&type=' . $entity_type['name'],
+      'url' => 'civicrm/eck/entity/list/' . $entity_type['name'],
       'permission' => 'access CiviCRM',
       'operator' => 'OR',
       'separator' => 0,
